@@ -1,0 +1,20 @@
+#Import necessary modules
+from selenium import webdriver
+from bs4 import BeautifulSoup
+
+#set computer path and object to chrome browser
+chrome_path = r"C:\webdrivers\chromedriver.exe"
+browser = webdriver.Chrome(chrome_path)
+
+# use 'get' for URL request and set object to variable "source"
+browser.get("https://www.amazon.com/s?k=soap+bar&ref=nb_sb_noss_2")
+source = browser.page_source
+
+#use Beautiful Soup to parse html
+page_soup = BeautifulSoup(source, 'html.parser')
+
+#set a variable "block1" to find all "a" tags that fit criteria
+block1 = page_soup.findAll("a", {"class":"a-size-base"})
+
+#print the number of tags pulled
+print(len(block1))
