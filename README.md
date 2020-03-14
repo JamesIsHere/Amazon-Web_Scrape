@@ -3,7 +3,7 @@ Amazon Web Scraper
 
 This pulls up an Amazon page for the search result "soap+bars"
 
-The script will then attempt to find all instances of html tag <a> where the "class" attribute is "a-size-base"
+The script will then attempt to find all instances of the html tag <a> ( a link tag) where the "class" attribute is "a-size-base"
   
 Problems: The script seems to open the page and return a different amount of tags for each time it is run:
 
